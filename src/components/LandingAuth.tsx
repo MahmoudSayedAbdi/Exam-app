@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function LandingAuth() {
   return (
-    <section className='bg-secondary mb-10 lg:my-0  lg:rounded-r-[100px] rounded-none  flex justify-center items-center'>
+    <section className='bg-secondary mb-10 lg:my-0  lg:rounded-r-[100px] rounded-b-[100px]  flex justify-center items-center'>
     <div className=' flex flex-col items-start   m-20'>
 
       <div className='  dark:text-gray-700 '>

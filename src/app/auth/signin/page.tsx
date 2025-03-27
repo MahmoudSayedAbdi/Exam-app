@@ -4,7 +4,7 @@ import SocialButton from '@/components/SocialButton'
 import LandingAuth from '@/components/LandingAuth'
 import LoginForm from './_components/Login-Form'
 
-export default function page() {
+export default function signInPage() {
   return (
     <main className='grid  lg:grid-cols-2 h-screen grid-cols-1 '>
       {/* loanding */}

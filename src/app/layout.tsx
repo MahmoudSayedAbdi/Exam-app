@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Poppins } from "next/font/google";
+import Providers from "@/components/providers";
 
 const poppins = Poppins({
   weight: ['400', '700', "900"],
@@ -30,7 +31,9 @@ export default function RootLayout({
             themes={["dark", "light"]}
             disableTransitionOnChange
           >
+            <Providers>
             {children}
+            </Providers>
           </ThemeProvider>
         </body>
       </html>

@@ -4,7 +4,7 @@ import NavAuth from '@/components/NavAuth'
 import SocialButton from '@/components/SocialButton'
 import ForgotPasswordForm from './_components/ForgotPassword-Form'
 
-export default function page() {
+export default function forgotPasswordPage() {
   return (
    <main className='grid  lg:grid-cols-2 h-screen grid-cols-1 '>
         {/* loanding */}

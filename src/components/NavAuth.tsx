@@ -13,8 +13,8 @@ export default function NavAuth() {
                 </select>
             </form>
 
-            <Link className='mx-2 font-bold' href={"/signin"}>sign in </Link>
-            <Link className='rounded-xl mx-2 border p-3 ' href={"/signup"}>Register </Link>
+            <Link className='mx-2 font-bold' href={"/auth/signin"}>sign in </Link>
+            <Link className='rounded-xl mx-2 border p-3 ' href={"/auth/signup"}>Register </Link>
         </div>
     )
 }

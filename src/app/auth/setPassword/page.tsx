@@ -1,20 +1,21 @@
+import React from 'react'
 import LandingAuth from '@/components/LandingAuth'
 import NavAuth from '@/components/NavAuth'
 import SocialButton from '@/components/SocialButton'
-import VerifyCodeForm from './_components/VerifyCode-Form'
+import SetPasswordForm from './_components/SetPassword-Form'
 
-export default function page() {
+export default function setPasswordPage() {
   return (
    <main className='grid  lg:grid-cols-2 h-screen grid-cols-1 '>
         {/* loanding */}
         <LandingAuth />
-        {/*  Verify Code */}
+        {/*  Forgot Password */}
         <section className='grid grid-cols-1 gap-10  justify-self-center  pb-10 lg:pb-0    '>
           {/* nav auth */}
           <NavAuth />
-          {/* Form Verify Code */}
+          {/* Form Forgot Password */}
           <div>
-            <VerifyCodeForm></VerifyCodeForm>
+            <SetPasswordForm></SetPasswordForm>
             <SocialButton />
           </div>
         </section>

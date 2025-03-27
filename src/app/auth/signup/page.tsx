@@ -4,7 +4,7 @@ import NavAuth from '@/components/NavAuth'
 import SocialButton from '@/components/SocialButton'
 import SignUpForm from './_components/SignUp-Form'
 
-export default function page() {
+export default function signUpPage() {
   return (
     <main className='grid  lg:grid-cols-2 h-screen grid-cols-1 '>
       {/* loanding */}

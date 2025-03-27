@@ -124,7 +124,7 @@ export default function SignUpForm() {
               </FormItem>
             )}
           />
-          <p className="mb-4 mt-3  text-end">Already have an account? <button type="button" onClick={() => router.push("/forgotPassword")} className="mb-7 mt-3  text-end text-primary">Login</button></p>
+          <p className="mb-4 mt-3  text-end">Already have an account? <button type="button" onClick={() => router.push("/auth/signin")} className="mb-7 mt-3  text-end text-primary">Login</button></p>
 
           {/* submit */}
           <Button className="hover:bg-blue-800 py-5  w-full rounded-[20px]" type="submit">Sign in</Button>
