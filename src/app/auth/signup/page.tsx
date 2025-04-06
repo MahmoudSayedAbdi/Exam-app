@@ -5,6 +5,7 @@ import SocialButton from '@/components/SocialButton'
 import SignUpForm from './_components/SignUp-Form'
 
 export default function signUpPage() {
+  console.log("this is Api" , process.env.NEXTAUTH_SECRET);
   return (
     <main className='grid  lg:grid-cols-2 h-screen grid-cols-1 '>
       {/* loanding */}

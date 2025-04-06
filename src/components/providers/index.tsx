@@ -5,15 +5,9 @@ type ProvidersProps = {
 };
 
 export default function Providers({ children }: ProvidersProps) {
-
-
   return (
-      <NextAuthProvider>
-
-
-          {children}
-      </NextAuthProvider>
-    
-  
+    <NextAuthProvider>
+      {children}
+    </NextAuthProvider>
   );
 }
