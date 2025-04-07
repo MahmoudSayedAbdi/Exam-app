@@ -8,9 +8,11 @@ import { signOut } from "next-auth/react";
 
 export default function HomeComponents() {
     return (
-        <div className="flex flex-col   w-full max-w-60 p-8 gap-8    ">
+        <>
             <Image src={finalLogo} className="p-2" alt="Final logo" />
             <Button
+            
+                size={'2xl'}
                 type="button"
                 className="w-full flex justify-between text-white hover:text-primary "
                 onClick={() => window.location.href = "/student/dashboard"}>
@@ -18,20 +20,22 @@ export default function HomeComponents() {
                 <p className=" align-middle"> Dashboard</p>
             </Button>
             <Button
+                size={'2xl'}
                 type="button"
                 className="w-full text-primary  flex justify-between bg-transparent shadow-none hover:shadow"
-                onClick={() => window.location.href = "/student/quiz"}>
+                onClick={() => window.location.href = "/student/quizHistory"}>
                 <History />
                 <p className="align-middle">Quiz History</p>
             </Button>
             <Button
+                size={'2xl'}
                 type="button"
                 className="w-full text-primary  flex justify-between bg-transparent shadow-none hover:shadow"
-                onClick={ ()=>signOut({callbackUrl:"/auth/signin"}) }>
+                onClick={() => signOut({ callbackUrl: "/auth/signin" })}>
                 <LogOut />
                 <p className="align-middle">Log Out</p>
             </Button>
 
-        </div>
+        </>
     )
 }
