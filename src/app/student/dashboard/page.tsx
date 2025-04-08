@@ -5,11 +5,11 @@ import React from 'react'
 
 export default function dashboard() {
   return (
-    <div className="dashboard w-full   ">
+    <div className="dashboard">
 
-      <div className="search flex space-x-4">
+      <div className="search flex space-x-4 ">
         {/* search Input */}
-        <Command >
+        <Command className='shadow-xl '>
           <CommandInput placeholder="Search Quiz" />
         </Command>
 
@@ -24,7 +24,7 @@ export default function dashboard() {
       </div>
 
       <div className="info">
-
+        
       </div>
 
     </div>
