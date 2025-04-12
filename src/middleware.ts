@@ -8,7 +8,7 @@ const publicPages = new Set([ ...Array.from(authPages)]);
 
 export default async function middleware(req: NextRequest) {
   const token = await getToken({ req });
-
+  
   if (publicPages.has(req.nextUrl.pathname)) {
     if (!token) return NextResponse.next();
 

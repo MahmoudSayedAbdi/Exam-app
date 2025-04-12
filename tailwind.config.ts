@@ -65,7 +65,10 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		  boxShadow: {
+			'xl': '0 15px 40px 0 rgba(0, 0, 0, 0.05)',
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],

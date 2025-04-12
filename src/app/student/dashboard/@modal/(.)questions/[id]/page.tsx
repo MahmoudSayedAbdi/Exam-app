@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function quiz() {
+export default function questions() {
   return (
     <div>
-      Quiz page
+      page interceting
     </div>
   )
 }
