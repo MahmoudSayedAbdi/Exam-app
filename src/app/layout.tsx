@@ -16,9 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children, student
 }: Readonly<{
   children: React.ReactNode;
+  student: React.ReactNode;
 }>) {
   return (
     <>
@@ -34,7 +35,11 @@ export default function RootLayout({
           >
             <Providers>
 
-              <main>{children}</main>
+              <main>
+                {children}
+                {student}
+              </main>
+
             </Providers>
           </ThemeProvider>
         </body>

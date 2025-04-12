@@ -15,7 +15,7 @@ export default function HomeComponents() {
                 size={'2xl'}
                 type="button"
                 className="w-full flex justify-between text-white hover:text-primary "
-                onClick={() => window.location.href = "/student/dashboard"}>
+                onClick={() => window.location.href = "/dashboard"}>
                 <LayoutDashboard className="text-text-[#696F79]" />
                 <p className=" align-middle"> Dashboard</p>
             </Button>

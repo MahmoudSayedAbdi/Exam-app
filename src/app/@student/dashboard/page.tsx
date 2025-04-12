@@ -3,10 +3,9 @@ import FrameImg from '../../../../public/assets/Frame 40.png'
 import Image from 'next/image'
 import { ProgressDemo } from '@/components/Progress'
 import { CircleChevronDown, Flag, Timer } from 'lucide-react'
-import SearchComponenet from '@/components/SearchComponenet'
 import { decode } from 'next-auth/jwt'
 import { cookies } from 'next/headers'
-import ButtunNavgit from './_components/ButtunNavgit'
+import ButtunNavgit from '../../@student/dashboard/_components/ButtunNavgit'
 
 type subject = {
   _id: string,
@@ -23,6 +22,7 @@ export default async function dashboard() {
     token: authCookies
   });
 
+  // console.log(token)
   const respone = await fetch(`${process.env.NEXT_PUBLIC_API}/subjects`, {
     headers: {
       token: `${token?.token}`,
