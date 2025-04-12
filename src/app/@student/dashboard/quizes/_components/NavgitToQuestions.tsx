@@ -9,7 +9,7 @@ export default function NavgitToQuestions({examId} : {examId:string}) {
 
     
   return (
-    <Button onClick={()=>router.push(`/student/dashboard/questions/${examId}`)} className='py-1 px-6 rounded-[20px] hover:text-primary'> Start</Button>
+    <Button onClick={()=>router.push(`/dashboard/questions/${examId}`)} className='py-1 px-6 rounded-[20px] hover:text-primary'> Start</Button>
 
   )
 }

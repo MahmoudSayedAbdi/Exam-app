@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function questions() {
+export default function page() {
   return (
     <div>
-      page interceting
+      dashboard paraller
     </div>
   )
 }

@@ -8,7 +8,7 @@ export default function ButtunNavgit({subject} : {subject:string}) {
 
     
   return (
-    <button onClick={()=>router.push(`/student/dashboard/quizes/${subject}`)} className="border-none absolute inset-0">
+    <button onClick={()=>router.push(`/dashboard/quizes/${subject}`)} className="border-none absolute inset-0">
       
     </button>
   )

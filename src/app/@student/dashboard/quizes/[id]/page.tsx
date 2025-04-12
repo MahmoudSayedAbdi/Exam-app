@@ -3,7 +3,7 @@ import HtmlIcon from "../../../../../../public/assets/HtmlIcon.png"
 import Image from 'next/image'
 import { cookies } from 'next/headers'
 import { decode } from 'next-auth/jwt'
-import NavgitToQuestions from './_components/NavgitToQuestions'
+import NavgitToQuestions from '../_components/NavgitToQuestions'
 
 type exam = {
   _id: string,
@@ -49,10 +49,10 @@ export default async function quizes({ params }: { params: { id: string } }) {
             <div className="flex justify-between gap-4 w-full text-[#0F0F0F] ">
               <div className='flex flex-col gap-1'>
                 <p className='font-medium'>{exam.title}</p>
-                <p className='text-[13px] text-[#535353]'>20 Question</p>
+                <p className='text-[13px] text-[#535353]'>{exam.numberOfQuestions} Question</p>
               </div>
               <div className="flex flex-col gap-2">
-                <p className='text-[13px] '>15 Minutes</p>
+                <p className='text-[13px] '>{exam.duration} Minutes</p>
                 <NavgitToQuestions examId = {exam._id}/>
               </div>
             </div>
