@@ -11,7 +11,7 @@ export default function QuizButton() {
       <Button
         className='flex justify-between text-white hover:text-primary'
         size={'2xl'}
-        onClick={()=> router.push('/student/quiz')}
+        onClick={()=> router.push('/student/quizes')}
         >
         Start Quiz
       </Button>
