@@ -1,41 +1,44 @@
-'use client'
-import React from 'react'
-import { Button } from "@/components/ui/button";
-import { History, LayoutDashboard, LogOut } from "lucide-react";
-import Image from "next/image";
-import finalLogo from "../../public/assets/Final Logo 1.png";
-import { signOut } from "next-auth/react";
+'use client';
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { History, LayoutDashboard, LogOut } from 'lucide-react';
+import Image from 'next/image';
+import finalLogo from '../../public/assets/Final Logo 1.png';
+import { signOut } from 'next-auth/react';
 
 export default function HomeComponents() {
     return (
         <>
+            {/* Logo  */}
             <Image src={finalLogo} className="p-2" alt="Final logo" />
-            <Button
-            
-                size={'2xl'}
-                type="button"
-                className="w-full flex justify-between text-white hover:text-primary "
-                onClick={() => window.location.href = "/dashboard"}>
+
+            {/* Dashboard Button */}
+            <Button size={'2xl'} type="button" className="w-full flex justify-between text-white hover:text-primary " onClick={() => (window.location.href = '/dashboard')}>
                 <LayoutDashboard className="text-text-[#696F79]" />
                 <p className=" align-middle"> Dashboard</p>
             </Button>
+
+            {/* Quiz History Button */}
             <Button
                 size={'2xl'}
                 type="button"
                 className="w-full text-primary  flex justify-between bg-transparent shadow-none hover:shadow"
-                onClick={() => window.location.href = "/student/quizHistory"}>
+                onClick={() => (window.location.href = '/student/quizHistory')}
+            >
                 <History />
                 <p className="align-middle">Quiz History</p>
             </Button>
+
+            {/* signOut Button*/}
             <Button
                 size={'2xl'}
                 type="button"
                 className="w-full text-primary  flex justify-between bg-transparent shadow-none hover:shadow"
-                onClick={() => signOut({ callbackUrl: "/auth/signin" })}>
+                onClick={() => signOut({ callbackUrl: '/auth/signin' })}
+            >
                 <LogOut />
                 <p className="align-middle">Log Out</p>
             </Button>
-
         </>
-    )
+    );
 }

@@ -1,25 +1,24 @@
-import React from 'react'
-import LandingAuth from '@/components/LandingAuth'
-import NavAuth from '@/components/NavAuth'
-import SocialButton from '@/components/SocialButton'
-import ForgotPasswordForm from './_components/ForgotPassword-Form'
+import React from 'react';
+import LandingAuth from '@/components/LandingAuth';
+import NavAuth from '@/components/NavAuth';
+import SocialButton from '@/components/SocialButton';
+import ForgotPasswordForm from './_components/ForgotPassword-Form';
 
 export default function forgotPasswordPage() {
-  return (
-   <main className='grid  lg:grid-cols-2 h-screen grid-cols-1 '>
-        {/* loanding */}
-        <LandingAuth />
-        {/*  Forgot Password */}
-        <section className='grid grid-cols-1 gap-10  justify-self-center  pb-10 lg:pb-0    '>
-          {/* nav auth */}
-          <NavAuth />
-          {/* Form Forgot Password */}
-          <div>
-            <ForgotPasswordForm></ForgotPasswordForm>
-            <SocialButton />
-          </div>
-        </section>
-      </main>
-  )
+    return (
+        <main className="grid  lg:grid-cols-2 h-screen grid-cols-1 ">
+            {/* loanding */}
+            <LandingAuth />
+            {/*  Forgot Password */}
+            <section className="grid grid-cols-1 gap-10  justify-self-center  pb-10 lg:pb-0    ">
+                {/* nav auth */}
+                <NavAuth />
+                {/* Form Forgot Password */}
+                <div>
+                    <ForgotPasswordForm></ForgotPasswordForm>
+                    <SocialButton />
+                </div>
+            </section>
+        </main>
+    );
 }
-
