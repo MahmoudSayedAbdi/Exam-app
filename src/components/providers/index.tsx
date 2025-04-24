@@ -1,13 +1,14 @@
-import NextAuthProvider from "./components/next-auth.provider";
+import NextAuthProvider from './components/next-auth.provider';
+import ReactQueryProvider from './components/react-query-provider';
 
 type ProvidersProps = {
-  children: React.ReactNode;
+    children: React.ReactNode;
 };
 
 export default function Providers({ children }: ProvidersProps) {
-  return (
-    <NextAuthProvider>
-      {children}
-    </NextAuthProvider>
-  );
+    return <NextAuthProvider>
+        <ReactQueryProvider>
+            {children}
+        </ReactQueryProvider>
+    </NextAuthProvider>;
 }

@@ -4,9 +4,9 @@
 
 // export type RegisterResponse = Pick<User, "token" | "user">;
 
-declare type  ApplicationUser =  {
-    _id: string,
-    createdAt :string
+declare type ApplicationUser = {
+    _id: string;
+    createdAt: string;
     username: string;
     firstName: string;
     lastName: string;
@@ -14,8 +14,8 @@ declare type  ApplicationUser =  {
     phone: string;
     role: string;
     isVerified: boolean;
-}
+};
 export type LoginResponse = {
-    token : string,
-    user : ApplicationUser
-}
+    token: string;
+    user: ApplicationUser;
+};
