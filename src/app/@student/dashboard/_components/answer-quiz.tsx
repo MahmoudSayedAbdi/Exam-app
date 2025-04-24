@@ -7,7 +7,6 @@ import React, { useState } from 'react'
 
 export default function AnsowerQuiz() {
 
-
     const storedResults = localStorage.getItem('quizResults');
     if (!storedResults) {
         throw new Error('No quiz results found');
@@ -16,6 +15,7 @@ export default function AnsowerQuiz() {
     const parsedResults: SuccessfulResponse<CheckResponse> | null = JSON.parse(storedResults);
 
     const router = useRouter()
+
     return (
         <Dialog >
             <DialogTrigger asChild><Button className='hover'>Show results?</Button></DialogTrigger>
