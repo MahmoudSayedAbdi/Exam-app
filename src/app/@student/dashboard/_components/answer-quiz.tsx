@@ -19,7 +19,6 @@ export default function AnsowerQuiz() {
             <DialogTrigger asChild><Button className='hover'>Show results?</Button></DialogTrigger>
             <DialogContent >
                 <DialogHeader>
-
                     <div className='grid grid-cols-2 gap-10 shadow-xl'>
                         {parsedResults?.WrongQuestions.map((q) => {
                             return (
