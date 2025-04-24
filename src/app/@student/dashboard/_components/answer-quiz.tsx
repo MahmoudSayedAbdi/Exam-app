@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { DialogHeader } from '@/components/ui/dialog'
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from '@radix-ui/react-dialog'
+import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
 export default function AnsowerQuiz() {
@@ -14,6 +15,7 @@ export default function AnsowerQuiz() {
 
     const parsedResults: SuccessfulResponse<CheckResponse> | null = JSON.parse(storedResults);
 
+    const router = useRouter()
     return (
         <Dialog >
             <DialogTrigger asChild><Button className='hover'>Show results?</Button></DialogTrigger>
@@ -32,6 +34,7 @@ export default function AnsowerQuiz() {
                         }
                         )}
                     </div>
+                    <Button onClick={() => { router.back() }}> close</Button>
                 </DialogHeader>
             </DialogContent>
         </Dialog>
