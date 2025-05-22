@@ -4,7 +4,14 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from '@/components/ui/form';
 import { useRouter } from 'next/navigation';
 import { JSON_HEADER } from '@/lib/constant/api.constant';
 
@@ -14,9 +21,10 @@ const Schema = z.object({
 
 type formSchema = z.infer<typeof Schema>;
 export default function VerifyCodeForm() {
-    // router
+    // Navigation
     const router = useRouter();
 
+    // Form
     const form = useForm({
         resolver: zodResolver(Schema),
         defaultValues: {
@@ -31,6 +39,7 @@ export default function VerifyCodeForm() {
         control,
     } = form;
 
+    // Functions
     async function onSubmit(values: formSchema) {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API}/auth/verifyResetCode`, {
             method: 'POST',
@@ -50,30 +59,45 @@ export default function VerifyCodeForm() {
         <div className="flex justify-center ">
             <Form {...form}>
                 <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+                    {/* Title */}
                     <p className="text-2xl font-bold"> Verify code</p>
+
+                    {/* Feedback message */}
                     <p className="mt-5 text-red-500">{errors.root?.message}</p>
-                    {/* Field Fname */}
+
+                    {/* OTP Code */}
                     <FormField
                         control={control}
                         name="resetCode"
                         render={({ field }) => (
                             <FormItem className="my-2">
                                 <FormControl className="relative">
-                                    <Input {...register('resetCode')} type="resetCode" className="p-5" placeholder="Enter Code" {...field} />
+                                    <Input
+                                        {...register('resetCode')}
+                                        type="resetCode"
+                                        className="p-5"
+                                        placeholder="Enter Code"
+                                        {...field}
+                                    />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
 
+                    {/* Resend */}
                     <p className="mb-4   text-end">
                         Didn't receive a code?{' '}
-                        <button type="button" onClick={() => router.push('/auth/forgotPassword')} className="mb-7 mt-3  text-end text-primary">
+                        <button
+                            type="button"
+                            onClick={() => router.push('/auth/forgotPassword')}
+                            className="mb-7 mt-3  text-end text-primary"
+                        >
                             Resend
                         </button>
                     </p>
 
-                    {/* submit */}
+                    {/* Submit */}
                     <Button className="hover:bg-blue-800 py-5  w-full rounded-[20px]" type="submit">
                         Verify
                     </Button>

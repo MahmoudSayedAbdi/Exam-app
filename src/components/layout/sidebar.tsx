@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeComponents from './HomeComponents';
+import HomeComponents from '../HomeComponents';
 
 export default function Sidebar() {
     return (

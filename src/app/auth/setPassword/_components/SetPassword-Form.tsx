@@ -4,18 +4,28 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from '@/components/ui/form';
 import { useState } from 'react';
 import { Eye, EyeClosed } from 'lucide-react';
 import { JSON_HEADER } from '@/lib/constant/api.constant';
 
 // zod
 const Schema = z.object({
-    email: z.string().min(4, 'A valid Password address must be entered.'),
+    email: z.string().min(4, 'A valid Password address must be entered.'), // Incorrect
     newPassword: z
         .string()
         .min(6, 'A valid Password address must be entered.')
-        .regex(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/, 'Password is not matched'),
+        .regex(
+            /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+            'Password is not matched'
+        ),
 });
 
 type formSchema = z.infer<typeof Schema>;
@@ -70,7 +80,13 @@ export default function SetPasswordForm() {
                         render={({ field }) => (
                             <FormItem className="mt-7 ">
                                 <FormControl>
-                                    <Input {...register('email')} type="email" className="p-5" placeholder="Email" {...field} />
+                                    <Input
+                                        {...register('email')}
+                                        type="email"
+                                        className="p-5"
+                                        placeholder="Email"
+                                        {...field}
+                                    />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -85,9 +101,19 @@ export default function SetPasswordForm() {
                             <FormItem className="mt-7  mb-7">
                                 <div className="relative">
                                     <FormControl>
-                                        <Input {...register('newPassword')} type={showPassword ? 'text' : 'password'} className="p-5" placeholder="Re-enter Password" {...field} />
+                                        <Input
+                                            {...register('newPassword')}
+                                            type={showPassword ? 'text' : 'password'}
+                                            className="p-5"
+                                            placeholder="Re-enter Password"
+                                            {...field}
+                                        />
                                     </FormControl>
-                                    <button type="button" onClick={togglePasswordVisibility} className="absolute opacity-50 right-3 inset-y-0 flex justify-center items-center">
+                                    <button
+                                        type="button"
+                                        onClick={togglePasswordVisibility}
+                                        className="absolute opacity-50 right-3 inset-y-0 flex justify-center items-center"
+                                    >
                                         {showPassword ? <Eye /> : <EyeClosed />}
                                     </button>
                                 </div>

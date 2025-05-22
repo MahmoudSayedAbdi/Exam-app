@@ -18,9 +18,17 @@
             }
         ],
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./src/*"],
+            "@assets/*": ["./public/assets/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/auth/signup/_components/FormSignUptsx", "src/app/@student/dashboard/quizes/answerQuiz"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts",
+        "src/app/auth/signup/_components/FormSignUptsx",
+        "src/app/@student/dashboard/quizes/answerQuiz"
+    ],
     "exclude": ["node_modules"]
 }

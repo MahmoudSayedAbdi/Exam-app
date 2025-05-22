@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { History, LayoutDashboard, LogOut } from 'lucide-react';
 import Image from 'next/image';
-import finalLogo from '../../public/assets/Final Logo 1.png';
+import finalLogo from '@assets/Final-Logo-1.png';
 import { signOut } from 'next-auth/react';
 
 export default function HomeComponents() {
@@ -13,8 +13,13 @@ export default function HomeComponents() {
             <Image src={finalLogo} className="p-2" alt="Final logo" />
 
             {/* Dashboard Button */}
-            <Button size={'2xl'} type="button" className="w-full flex justify-between text-white hover:text-primary " onClick={() => (window.location.href = '/dashboard')}>
-                <LayoutDashboard className="text-text-[#696F79]" />
+            <Button
+                size={'2xl'}
+                type="button"
+                className="w-full flex justify-between text-white hover:text-primary "
+                onClick={() => (window.location.href = '/dashboard')}
+            >
+                <LayoutDashboard className="text-text-custom-gray-50" />
                 <p className=" align-middle"> Dashboard</p>
             </Button>
 

@@ -1,5 +1,5 @@
-import React from 'react'
-import TimeIcon from '../../../../../public/assets/TimeIcon.png';
+import React from 'react';
+import TimeIcon from '@assets/TimeIcon.png';
 
 export default function HeaderDialog() {
     return (
@@ -14,13 +14,18 @@ export default function HeaderDialog() {
 
             {/* navigation steps */}
             <ol className="flex items-center justify-between w-full">
-                {Array.from({ length: 10 }, (_, i) => i).map(i => <li key={i} className="flex items-center w-full">
-                    <div className={`flex items-center justify-center size-5 rounded-full shrink-0 bg-blue-300 `}></div>
-                </li>
-                )}
+                {Array.from({ length: 10 }, (_, i) => i).map((i) => (
+                    <li key={i} className="flex items-center w-full">
+                        <div
+                            className={`flex items-center justify-center size-5 rounded-full shrink-0 bg-blue-300 `}
+                        ></div>
+                    </li>
+                ))}
 
-                {Array.from({ length: 10 }, (_, i) => i).map(i => <p></p>)}
+                {Array.from({ length: 10 }, (_, i) => i).map((i) => (
+                    <p></p>
+                ))}
             </ol>
         </header>
-    )
+    );
 }

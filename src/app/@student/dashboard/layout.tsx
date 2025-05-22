@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import SearchComponenet from '@/components/SearchComponenet';
+import SearchComponenet from '@/components/search-component';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/app-sidebar';
 

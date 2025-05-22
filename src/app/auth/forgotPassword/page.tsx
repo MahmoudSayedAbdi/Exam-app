@@ -1,7 +1,7 @@
 import React from 'react';
 import LandingAuth from '@/components/LandingAuth';
-import NavAuth from '@/components/NavAuth';
-import SocialButton from '@/components/SocialButton';
+import NavAuth from '@/components/layout/NavAuth';
+import SocialButton from '@/components/social-button';
 import ForgotPasswordForm from './_components/ForgotPassword-Form';
 
 export default function forgotPasswordPage() {

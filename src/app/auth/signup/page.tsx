@@ -1,11 +1,10 @@
 import React from 'react';
 import LandingAuth from '@/components/LandingAuth';
-import NavAuth from '@/components/NavAuth';
-import SocialButton from '@/components/SocialButton';
+import NavAuth from '@/components/layout/NavAuth';
+import SocialButton from '@/components/social-button';
 import SignUpForm from './_components/SignUp-Form';
 
 export default function signUpPage() {
-    console.log('this is Api', process.env.NEXTAUTH_SECRET);
     return (
         <main className="grid  lg:grid-cols-2 h-screen grid-cols-1 ">
             {/* loanding */}
