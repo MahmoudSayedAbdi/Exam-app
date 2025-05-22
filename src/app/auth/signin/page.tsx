@@ -1,6 +1,6 @@
 import React from 'react';
-import NavAuth from '@/components/NavAuth';
-import SocialButton from '@/components/SocialButton';
+import NavAuth from '@/components/layout/NavAuth';
+import SocialButton from '@/components/social-button';
 import LandingAuth from '@/components/LandingAuth';
 import LoginForm from './_components/Login-Form';
 

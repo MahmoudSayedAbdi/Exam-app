@@ -1,5 +1,5 @@
 import React from 'react';
-import FrameImg from '../../../../public/assets/Frame 40.png';
+import FrameImg from '@assets/Frame-40.png';
 import Image from 'next/image';
 import { ProgressDemo } from '@/components/Progress';
 import { CircleChevronDown, Flag, Timer } from 'lucide-react';
@@ -14,14 +14,13 @@ type subject = {
 };
 
 export default async function dashboard() {
-
     // get  Token
-    const token = await getDecodedToken()
+    const token = await getDecodedToken();
 
     // fetch Subjects
     const respone = await fetch(`${process.env.NEXT_PUBLIC_API}/subjects`, {
         headers: {
-            token: token?.token || ''
+            token: token?.token || '',
         },
     });
     const pyload = await respone.json();
@@ -37,7 +36,8 @@ export default async function dashboard() {
 
                     <div className="col-span-3 flex flex-col gap-6 ">
                         <div className="flex flex-col gap1 ">
-                            <h4 className="text-primary  font-bold text-[32px]">Ahmed Mohamed</h4> {/* here get name from token by cookies().get  (letarly)  */}
+                            <h4 className="text-primary  font-bold text-[32px]">Ahmed Mohamed</h4>{' '}
+                            {/* here get name from token by cookies().get  (letarly)  */}
                             <p className="font-normal text-xl text-[#979CA3]">Voluptatem aut</p>
                         </div>
                         <ProgressDemo value={60} /> {/** value get from backend Api  */}
@@ -92,10 +92,18 @@ export default async function dashboard() {
                     {pyload.subjects.map((subject: subject) => {
                         return (
                             <div className="w-full relative rounded-[8px] overflow-hidden">
-                                <Image src={subject.icon} width={300} height={300} className="w-full" alt="Front end" />
+                                <Image
+                                    src={subject.icon}
+                                    width={300}
+                                    height={300}
+                                    className="w-full"
+                                    alt="Front end"
+                                />
                                 <div className="absolute top-[70%] inset-x-[10%] text-white p-4 rounded-[8.44px] bg-[#1935CA66] backdrop-blur-[27px]  ">
                                     <p className="font-bold text-[13.5px]">{subject.name}</p>
-                                    <p className="font-medium text-[11.82px]">Voluptatem aut ut dignissimos blanditiis</p>
+                                    <p className="font-medium text-[11.82px]">
+                                        Voluptatem aut ut dignissimos blanditiis
+                                    </p>
                                 </div>
                                 <NavToExams subject={subject._id} />
                             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import HtmlIcon from '../../../../../../public/assets/HtmlIcon.png';
+import HtmlIcon from '@assets/HtmlIcon.png';
 import Image from 'next/image';
 import { getDecodedToken } from '@/lib/utils/auth-header';
 import { QuestionDialog } from '../../_components/QuestionDialog';
@@ -9,7 +9,7 @@ export default async function quizes({ params }: { params: { id: string } }) {
     const subjectId = params.id;
 
     // get Token
-    const token = await getDecodedToken()
+    const token = await getDecodedToken();
 
     // fetch Exams
     const respone = await fetch(`${process.env.NEXT_PUBLIC_API}/exams?subject=${subjectId}`, {
@@ -39,7 +39,9 @@ export default async function quizes({ params }: { params: { id: string } }) {
                             <div className="flex justify-between gap-4 w-full text-[#0F0F0F] ">
                                 <div className="flex flex-col gap-1">
                                     <p className="font-medium">{exam.title}</p>
-                                    <p className="text-[13px] text-[#656565]">{exam.numberOfQuestions} Question</p>
+                                    <p className="text-[13px] text-[#656565]">
+                                        {exam.numberOfQuestions} Question
+                                    </p>
                                 </div>
 
                                 <div className="flex flex-col gap-2">

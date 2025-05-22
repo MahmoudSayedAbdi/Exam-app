@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
-import FacebookIcon from '../../public/assets/Logo-1.png';
-import AppleIcon from '../../public/assets/Logo-2.png';
-import Xicon from '../../public/assets/Logo.png';
-import Googleicon from '../../public/assets/Logo Google.png';
+import FacebookIcon from '@assets/Logo-1.png';
+import AppleIcon from '@assets/Logo-2.png';
+import Xicon from '@assets/Logo.png';
+import Googleicon from '@assets/Logo-Google.png';
 
 export default function SocialButton() {
     return (

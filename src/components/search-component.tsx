@@ -1,9 +1,9 @@
 import React from 'react';
 import { Command, CommandInput } from './ui/command';
-import QuizButton from './QuizButton';
+import QuizButton from './features/quiz/QuizButton';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
-export default function SearchComponenet() {
+export default function SearchComponent() {
     return (
         <div className="search flex space-x-4 ">
             {/* search Input */}

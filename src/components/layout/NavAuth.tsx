@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { ComboboxDemo } from './Combobox';
+import { ComboboxDemo } from '../Combobox';
 
 export default function NavAuth() {
     return (

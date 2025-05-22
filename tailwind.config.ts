@@ -1,11 +1,19 @@
 import type { Config } from 'tailwindcss';
+import tailwindAnimate from 'tailwindcss-animate';
 
 const config: Config = {
     darkMode: ['class'],
-    content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
+    content: [
+        './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    ],
     theme: {
         extend: {
             colors: {
+                'custom-gray': {
+                    400: '#696F79',
+                },
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 card: {
@@ -67,6 +75,6 @@ const config: Config = {
             },
         },
     },
-    plugins: [require('tailwindcss-animate')],
+    plugins: [tailwindAnimate],
 };
 export default config;

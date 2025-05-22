@@ -1,6 +1,6 @@
 import LandingAuth from '@/components/LandingAuth';
-import NavAuth from '@/components/NavAuth';
-import SocialButton from '@/components/SocialButton';
+import NavAuth from '@/components/layout/NavAuth';
+import SocialButton from '@/components/social-button';
 import VerifyCodeForm from './_components/VerifyCode-Form';
 
 export default function verifyCodePage() {
@@ -8,13 +8,18 @@ export default function verifyCodePage() {
         <main className="grid  lg:grid-cols-2 h-screen grid-cols-1 ">
             {/* loanding */}
             <LandingAuth />
+
             {/*  Verify Code */}
-            <section className="grid grid-cols-1 gap-10  justify-self-center  pb-10 lg:pb-0    ">
-                {/* nav auth */}
+            <section className="grid grid-cols-1 gap-10 justify-self-center  pb-10 lg:pb-0">
+                {/* Nav auth */}
                 <NavAuth />
+
                 {/* Form Verify Code */}
                 <div>
-                    <VerifyCodeForm></VerifyCodeForm>
+                    {/* Form */}
+                    <VerifyCodeForm />
+
+                    {/* Socials */}
                     <SocialButton />
                 </div>
             </section>

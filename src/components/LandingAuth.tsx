@@ -1,5 +1,5 @@
 import React from 'react';
-import loadingImg from '../../public/assets/bro.png';
+import loadingImg from '@assets/bro.png';
 import Image from 'next/image';
 
 export default function LandingAuth() {
@@ -10,7 +10,9 @@ export default function LandingAuth() {
                     <h2 className="text-[50px] font-bold  ">
                         Welcome to <br /> <span className="text-primary text-6xl">Elevate</span>
                     </h2>
-                    <p className="text-lg leading-10 ">Quidem autem voluptatibus qui quaerat aspernatur architecto natus</p>
+                    <p className="text-lg leading-10 ">
+                        Quidem autem voluptatibus qui quaerat aspernatur architecto natus
+                    </p>
                 </div>
 
                 <div className=" mt-20">

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
 import { Poppins } from 'next/font/google';
 import Providers from '@/components/providers';
 
@@ -22,20 +21,16 @@ export default function RootLayout({
     student: React.ReactNode;
 }>) {
     return (
-        <>
-            <html lang="en" suppressHydrationWarning>
-                <head />
-                <body className={`${poppins.className} `}>
-                    <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['dark', 'light']} disableTransitionOnChange>
-                        <Providers>
-                            <main>
-                                {children}
-                                {student}
-                            </main>
-                        </Providers>
-                    </ThemeProvider>
-                </body>
-            </html>
-        </>
+        <html lang="en" suppressHydrationWarning>
+            <head />
+            <body className={`${poppins.className} `}>
+                <Providers>
+                    <main>
+                        {children}
+                        {student}
+                    </main>
+                </Providers>
+            </body>
+        </html>
     );
 }
