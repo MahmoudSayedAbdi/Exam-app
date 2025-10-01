@@ -1,5 +1,4 @@
 'use client';
-
 import { Button } from '@/components/ui/button';
 import { DialogHeader } from '@/components/ui/dialog';
 import { Dialog, DialogContent, DialogTrigger } from '@radix-ui/react-dialog';
@@ -13,16 +12,13 @@ export default function AnsowerQuiz() {
 
     useEffect(() => {
         const storedResults = localStorage.getItem('quizResults');
-
         if (!storedResults) {
             setError('No quiz results found');
             return;
         }
-
         try {
             const results: SuccessfulResponse<CheckResponse> = JSON.parse(storedResults);
             setParsedResults(results);
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
             setError('Failed to parse quiz results');
         }
@@ -49,11 +45,11 @@ export default function AnsowerQuiz() {
                                 <div key={q.QID} className="flex flex-col gap-4 bg-gray-200 rounded-[10px] px-2 py-4">
                                     <h4 className="font-[500px] text-[#0F0F0F]">{q.Question}</h4>
                                     <p className="px-2 py-4 rounded-[10px] border border-[#11CE19] bg-green-300 flex gap-1 text-[#011234] text-xl">
-                                        <input type="checkbox" checked className="border border-green-500" name="" id="" />
+                                        <input type="checkbox" checked className="border border-green-500" />
                                         {q.correctAnswer}
                                     </p>
                                     <p className="px-2 py-4 rounded-[10px] border border-[#CC1010] bg-red-300 flex gap-1 text-[#011234] text-xl">
-                                        <input type="checkbox" checked className="border border-red-500" name="" id="" />
+                                        <input type="checkbox" checked className="border border-red-500" />
                                         {q.inCorrectAnswer}
                                     </p>
                                 </div>
