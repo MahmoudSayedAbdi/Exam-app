@@ -19,8 +19,8 @@ export default function AnsowerQuiz() {
         try {
             const results: SuccessfulResponse<CheckResponse> = JSON.parse(storedResults);
             setParsedResults(results);
-        } catch (err) {
-            setError('Failed to parse quiz results');
+        } catch (error) {
+            setError(error instanceof Error ? error.message : 'Failed to parse quiz results');
         }
     }, []);
 
