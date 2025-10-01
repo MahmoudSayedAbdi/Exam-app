@@ -4,7 +4,7 @@ export interface CheckQuestionData {
     wrong: number
     total: string
     WrongQuestions: WrongQuestion[]
-    correctQuestions: any[]
+    correctQuestions: unknown[]
   }
 
   export interface WrongQuestion {
@@ -15,4 +15,4 @@ export interface CheckQuestionData {
     answers: Answers
   }
 
-  export interface Answers {}
+  export type Answers = object

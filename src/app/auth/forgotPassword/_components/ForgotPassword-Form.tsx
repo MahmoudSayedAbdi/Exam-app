@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 import { JSON_HEADER } from '@/lib/constant/api.constant';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -49,8 +48,6 @@ export default function ForgotPasswordForm() {
             setError('root', { message: data.message });
         }
     }
-
-    const [eye, setEye] = useState(false);
 
     return (
         <div className="flex justify-center ">

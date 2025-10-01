@@ -10,10 +10,7 @@ export default function useCheckQuestions() {
       if ("code" in payload) throw new Error(payload.message);
 
       return payload;
-    },
-    onError: (error) => {
-      console.log(error.message);
-    },
+    }
   });
 
   return { isPending, error, checkQuestions: mutate ,data };

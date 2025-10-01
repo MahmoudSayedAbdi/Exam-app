@@ -12,6 +12,7 @@ export default function AnsowerQuiz() {
     const router = useRouter();
 
     useEffect(() => {
+        // دلوقتي localStorage متاح لأننا على الـ client
         const storedResults = localStorage.getItem('quizResults');
 
         if (!storedResults) {
@@ -23,17 +24,19 @@ export default function AnsowerQuiz() {
             const results: SuccessfulResponse<CheckResponse> = JSON.parse(storedResults);
             setParsedResults(results);
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        } catch (err) {
+        } catch (error) {
             setError('Failed to parse quiz results');
         }
     }, []);
 
+    // لو البيانات لسه بتتحمل
     if (!parsedResults && !error) {
-        return <div className="flex items-center justify-center p-8">Loading...</div>;
+        return <div>Loading...</div>;
     }
 
+    // لو في خطأ
     if (error) {
-        return <div className="flex items-center justify-center p-8 text-red-500">Error: {error}</div>;
+        return <div>Error: {error}</div>;
     }
 
     return (
@@ -49,11 +52,11 @@ export default function AnsowerQuiz() {
                                 <div key={q.QID} className="flex flex-col gap-4 bg-gray-200 rounded-[10px] px-2 py-4">
                                     <h4 className="font-[500px] text-[#0F0F0F]">{q.Question}</h4>
                                     <p className="px-2 py-4 rounded-[10px] border border-[#11CE19] bg-green-300 flex gap-1 text-[#011234] text-xl">
-                                        <input type="checkbox" checked className="border border-green-500" name="" id="" />
+                                        <input type="checkbox" checked className="border border-green-500" />
                                         {q.correctAnswer}
                                     </p>
                                     <p className="px-2 py-4 rounded-[10px] border border-[#CC1010] bg-red-300 flex gap-1 text-[#011234] text-xl">
-                                        <input type="checkbox" checked className="border border-red-500" name="" id="" />
+                                        <input type="checkbox" checked className="border border-red-500" />
                                         {q.inCorrectAnswer}
                                     </p>
                                 </div>

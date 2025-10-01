@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { useRouter } from 'next/navigation';
-import { Eye, EyeClosed, Loader2 } from 'lucide-react';
+import { Eye, EyeClosed } from 'lucide-react';
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 

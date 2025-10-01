@@ -5,7 +5,6 @@ export async function getDecodedToken() {
   const tokenCookie = cookies().get('next-auth.session-token')?.value;
   let JWT: JWT | null = null;
 
-
   try {
     JWT = await decode({
       token: tokenCookie,

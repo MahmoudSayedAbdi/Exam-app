@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -152,7 +151,7 @@ const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
 });
 CarouselItem.displayName = 'CarouselItem';
 
-const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(({ className, variant = 'outline', size = 'icon', children, ...props }, ref) => {
+const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(({ className, variant = 'outline', size = 'icon', children }, ref) => {
     const { scrollPrev, canScrollPrev } = useCarousel();
 
     return (
@@ -174,7 +173,7 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
 });
 CarouselPrevious.displayName = 'CarouselPrevious';
 
-const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(({ className, variant = 'outline', size = 'icon', children, ...props }, ref) => {
+const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(({ className, variant = 'outline', size = 'icon', children }, ref) => {
     const { scrollNext, canScrollNext } = useCarousel();
 
     return (

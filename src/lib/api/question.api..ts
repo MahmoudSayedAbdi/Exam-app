@@ -24,24 +24,3 @@ export async function getQuestionsByExam (examId: string)  {
       return pyload ;
 
   }
-
-  // createQuestion: async (examId: string, questionData: Omit<Question, 'id'>): Promise<Question> => {
-  //   const token = await getDecodedToken();
-
-  //   const response = await fetch(`${process.env.NEXT_PUBLIC_API}/questions?exam=${examId}`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Authorization': `Bearer ${token?.token || ''}`
-  //     },
-  //     body: JSON.stringify(questionData),
-  //   });
-
-  //   if (!response.ok) {
-  //     throw new Error(`Failed to create question: ${response.status}`);
-  //   }
-
-  //   return await response.json();
-  // },
-
-

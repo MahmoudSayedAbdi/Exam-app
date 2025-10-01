@@ -9,7 +9,7 @@ import { Eye, EyeClosed } from 'lucide-react';
 import { useState } from 'react';
 import { JSON_HEADER } from '@/lib/constant/api.constant';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { signOut } from 'next-auth/react';
+
 // zod
 const Schema = z.object({
     username: z.string().min(4, 'At least 4 letters are required'),

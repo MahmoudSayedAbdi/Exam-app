@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { History, LayoutDashboard, LogOut } from 'lucide-react';
+import { LayoutDashboard, LogOut } from 'lucide-react';
 import Image from 'next/image';
-import finalLogo from '../../public/assets/Final Logo 1.png';
+import finalLogo from '../../../../../public/assets/Final Logo 1.png';
 import { signOut } from 'next-auth/react';
 
 export default function HomeComponents() {
@@ -14,19 +14,8 @@ export default function HomeComponents() {
 
             {/* Dashboard Button */}
             <Button size={'2xl'} type="button" className="w-full flex justify-between text-white hover:text-primary " onClick={() => (window.location.href = '/dashboard')}>
-                <LayoutDashboard />
+                <LayoutDashboard className="text-text-[#696F79]" />
                 <p className=" align-middle"> Dashboard</p>
-            </Button>
-
-            {/* Quiz History Button */}
-            <Button
-                size={'2xl'}
-                type="button"
-                className="w-full text-primary  flex justify-between bg-transparent shadow-none hover:shadow"
-                onClick={() => (window.location.href = '/quizHistory')}
-            >
-                <History />
-                <p className="align-middle">Quiz History</p>
             </Button>
 
             {/* signOut Button*/}
