@@ -1,4 +1,5 @@
 'use client';
+
 import { Button } from '@/components/ui/button';
 import { DialogHeader } from '@/components/ui/dialog';
 import { Dialog, DialogContent, DialogTrigger } from '@radix-ui/react-dialog';
@@ -11,25 +12,31 @@ export default function AnsowerQuiz() {
     const router = useRouter();
 
     useEffect(() => {
+        // دلوقتي localStorage متاح لأننا على الـ client
         const storedResults = localStorage.getItem('quizResults');
+
         if (!storedResults) {
             setError('No quiz results found');
             return;
         }
+
         try {
             const results: SuccessfulResponse<CheckResponse> = JSON.parse(storedResults);
             setParsedResults(results);
-        } catch (err) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (error) {
             setError('Failed to parse quiz results');
         }
     }, []);
 
+    // لو البيانات لسه بتتحمل
     if (!parsedResults && !error) {
-        return <div className="flex items-center justify-center p-8">Loading...</div>;
+        return <div>Loading...</div>;
     }
 
+    // لو في خطأ
     if (error) {
-        return <div className="flex items-center justify-center p-8 text-red-500">Error: {error}</div>;
+        return <div>Error: {error}</div>;
     }
 
     return (

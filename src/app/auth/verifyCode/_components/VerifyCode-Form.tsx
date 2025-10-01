@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { useRouter } from 'next/navigation';
 import { JSON_HEADER } from '@/lib/constant/api.constant';
 
@@ -67,7 +67,7 @@ export default function VerifyCodeForm() {
                     />
 
                     <p className="mb-4   text-end">
-                        Didn't receive a code?{' '}
+                        Didn&apos;t receive a code?
                         <button type="button" onClick={() => router.push('/auth/forgotPassword')} className="mb-7 mt-3  text-end text-primary">
                             Resend
                         </button>

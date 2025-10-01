@@ -10,7 +10,7 @@ export function ProgressDemo({ value }: { value: React.SetStateAction<number> })
     React.useEffect(() => {
         const timer = setTimeout(() => setProgress(value), 500);
         return () => clearTimeout(timer);
-    }, []);
+    }, [value]);
 
     return <Progress value={progress} className="w-[70%] " />;
 }
